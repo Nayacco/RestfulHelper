@@ -118,6 +118,9 @@ jobs:
           path: ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
 
+      - name: chmod
+        run: chmod +x gradlew
+
       # Set environment variables
       - name: Export Properties
         id: properties
@@ -180,6 +183,9 @@ jobs:
         with:
           path: ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
+
+      - name: chmod
+        run: chmod +x gradlew
 
       # Set environment variables
       - name: Export Properties
