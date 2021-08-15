@@ -1,6 +1,5 @@
 package com.github.goldsubmarine.restfulhelper
 
-import com.github.goldsubmarine.restfulhelper.RequestMapperIcons
 import com.intellij.navigation.ItemPresentation
 import com.intellij.navigation.NavigationItem
 import com.intellij.pom.Navigatable
