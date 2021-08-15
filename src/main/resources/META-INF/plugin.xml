@@ -13,7 +13,7 @@
         <action id="GoToRequestMapping" class="com.github.goldsubmarine.restfulhelper.GoToRequestMappingAction"
           text="Request Mapping" description="Request mapping">
             <add-to-group group-id="GoToTargetEx" anchor="first"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl BACK_SLASH"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH"/>
         </action>
     </actions>
 
