@@ -1,0 +1,25 @@
+package com.github.goldsubmarine.restfulhelper.annotations.micronaut
+
+import com.intellij.psi.PsiAnnotation
+
+class Delete(psiAnnotation: PsiAnnotation) : MicronautMappingAnnotation(psiAnnotation) {
+    override fun extractMethod() = "DELETE"
+}
+class Get(psiAnnotation: PsiAnnotation) : MicronautMappingAnnotation(psiAnnotation) {
+    override fun extractMethod() = "GET"
+}
+class Head(psiAnnotation: PsiAnnotation) : MicronautMappingAnnotation(psiAnnotation) {
+    override fun extractMethod() = "HEAD"
+}
+class Options(psiAnnotation: PsiAnnotation) : MicronautMappingAnnotation(psiAnnotation) {
+    override fun extractMethod() = "OPTIONS"
+}
+class Patch(psiAnnotation: PsiAnnotation) : MicronautMappingAnnotation(psiAnnotation) {
+    override fun extractMethod() = "PATCH"
+}
+class Post(psiAnnotation: PsiAnnotation) : MicronautMappingAnnotation(psiAnnotation) {
+    override fun extractMethod() = "POST"
+}
+class Put(psiAnnotation: PsiAnnotation) : MicronautMappingAnnotation(psiAnnotation) {
+    override fun extractMethod() = "PUT"
+}

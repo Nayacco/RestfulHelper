@@ -19,9 +19,8 @@ abstract class MicronautMappingAnnotation(
     private val urlFormatter: UrlFormatter = MicronautUrlFormatter
 ) : MappingAnnotation {
 
-    override fun values(): List<RequestMappingItem> {
-        return fetchRequestMappingItem(psiAnnotation, psiAnnotation.fetchAnnotatedMethod(), extractMethod())
-    }
+    override fun values(): List<RequestMappingItem> =
+        fetchRequestMappingItem(psiAnnotation, psiAnnotation.fetchAnnotatedMethod(), extractMethod())
 
     abstract fun extractMethod(): String
 
@@ -64,11 +63,11 @@ abstract class MicronautMappingAnnotation(
         return when (val pathVariableValue = annotation.findAttributeValue(ATTRIBUTE_NAME)) {
             is PsiLiteralExpression -> {
                 val expression = extractExpression(pathVariableValue)
-                if (expression.isNotBlank()) expression else defaultValue
+                expression.ifBlank { defaultValue }
             }
             is PsiReferenceExpression -> {
                 val expression = extractExpression(pathVariableValue)
-                if (expression.isNotBlank()) expression else defaultValue
+                expression.ifBlank { defaultValue }
             }
             else -> defaultValue
         }
