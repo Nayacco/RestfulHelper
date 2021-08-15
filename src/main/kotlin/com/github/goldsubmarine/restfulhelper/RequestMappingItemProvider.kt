@@ -1,11 +1,9 @@
 package com.github.goldsubmarine.restfulhelper
 
-import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider
-import com.intellij.ide.util.gotoByName.ChooseByNameModelEx
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup
-import com.intellij.ide.util.gotoByName.ChooseByNameViewModel
-import com.intellij.ide.util.gotoByName.ContributorsBasedGotoByModel
+import com.github.goldsubmarine.restfulhelper.model.PopupPath
+import com.intellij.ide.util.gotoByName.*
 import com.intellij.openapi.progress.ProgressIndicator
+import com.intellij.psi.codeStyle.NameUtil
 import com.intellij.util.CollectConsumer
 import com.intellij.util.Processor
 import com.intellij.util.SmartList
@@ -13,10 +11,9 @@ import com.intellij.util.SynchronizedCollectConsumer
 import com.intellij.util.containers.ContainerUtil
 import com.intellij.util.indexing.FindSymbolParameters
 import com.intellij.util.indexing.IdFilter
-import com.github.goldsubmarine.restfulhelper.model.Path
-import com.github.goldsubmarine.restfulhelper.model.PopupPath
-import com.github.goldsubmarine.restfulhelper.model.RequestedUserPath
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap
+import kotlin.text.MatchResult
+import kotlin.text.isEmpty
 
 open class RequestMappingItemProvider : ChooseByNameItemProvider {
     override fun filterElements(
@@ -113,16 +110,9 @@ open class RequestMappingItemProvider : ChooseByNameItemProvider {
             return try {
                 if (pattern == "/") {
                     true
-                } else if (!pattern.contains('/')) {
-                    val (method, path) = name.split(" ", limit = 2)
-                    path.contains(pattern) || method.contains(pattern, ignoreCase = true)
                 } else {
-                    val popupPath = PopupPath(name)
-                    val requestedUserPath = RequestedUserPath(pattern)
-                    Path.isSubpathOf(
-                        popupPath.toPath(),
-                        requestedUserPath.toPath()
-                    )
+                    val (_, path) = name.split(" ", limit = 2)
+                    NameUtil.buildMatcher("*$pattern", NameUtil.MatchingCaseSensitivity.NONE).matches(path)
                 }
             } catch (e: Exception) {
                 false // no matches appears valid result for "bad" pattern
