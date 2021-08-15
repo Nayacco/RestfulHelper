@@ -1,0 +1,5 @@
+<idea-plugin>
+    <extensions defaultExtensionNs="com.github.goldsubmarine.restfulhelper">
+        <requestMappingContributor implementation="com.github.goldsubmarine.restfulhelper.contributor.KotlinRequestMappingContributor"/>
+    </extensions>
+</idea-plugin>

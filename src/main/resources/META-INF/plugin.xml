@@ -6,14 +6,26 @@
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <depends optional="true" config-file="pluginKotlin.xml">org.jetbrains.kotlin</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.goldsubmarine.restfulhelper.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.goldsubmarine.restfulhelper.services.MyProjectService"/>
+    <actions>
+        <action id="GoToRequestMapping" class="com.github.goldsubmarine.restfulhelper.GoToRequestMappingAction"
+          text="Request Mapping" description="Request mapping">
+            <add-to-group group-id="GoToTargetEx" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl BACK_SLASH"/>
+        </action>
+    </actions>
+
+    <extensionPoints>
+        <extensionPoint name="requestMappingContributor" interface="com.intellij.navigation.ChooseByNameContributor"/>
+    </extensionPoints>
+
+    <extensions  defaultExtensionNs="com.intellij">
+        <searchEverywhereContributor implementation="com.github.goldsubmarine.restfulhelper.RequestMappingGoToContributor$Factory"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.goldsubmarine.restfulhelper.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <extensions defaultExtensionNs="com.github.goldsubmarine.restfulhelper">
+        <requestMappingContributor implementation="com.github.goldsubmarine.restfulhelper.contributor.JavaRequestMappingContributor"/>
+    </extensions>
 </idea-plugin>
