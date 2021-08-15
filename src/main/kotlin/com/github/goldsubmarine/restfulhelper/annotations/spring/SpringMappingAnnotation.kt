@@ -84,11 +84,11 @@ abstract class SpringMappingAnnotation(
         return when (psiAnnotationMemberValue) {
             is PsiLiteralExpression -> {
                 val expression = PsiExpressionExtractor.extractExpression(psiAnnotationMemberValue)
-                if (expression.isNotBlank()) expression else defaultValue
+                expression.ifBlank { defaultValue }
             }
             is PsiReferenceExpression -> {
                 val expression = PsiExpressionExtractor.extractExpression(psiAnnotationMemberValue)
-                if (expression.isNotBlank()) expression else defaultValue
+                expression.ifBlank { defaultValue }
             }
             else -> defaultValue
         }

@@ -18,9 +18,8 @@ abstract class JaxRsMappingAnnotation(
     private val urlFormatter: UrlFormatter = JaxRsUrlFormatter
 ) : MappingAnnotation {
 
-    override fun values(): List<RequestMappingItem> {
-        return fetchRequestMappingItem(psiAnnotation.fetchAnnotatedMethod(), extractMethod())
-    }
+    override fun values(): List<RequestMappingItem> =
+        fetchRequestMappingItem(psiAnnotation.fetchAnnotatedMethod(), extractMethod())
 
     abstract fun extractMethod(): String
 
@@ -60,11 +59,11 @@ abstract class JaxRsMappingAnnotation(
         return when (val pathVariableValue = annotation.findAttributeValue(ATTRIBUTE_NAME)) {
             is PsiLiteralExpression -> {
                 val expression = extractExpression(pathVariableValue)
-                if (expression.isNotBlank()) expression else defaultValue
+                expression.ifBlank { defaultValue }
             }
             is PsiReferenceExpression -> {
                 val expression = extractExpression(pathVariableValue)
-                if (expression.isNotBlank()) expression else defaultValue
+                expression.ifBlank { defaultValue }
             }
             else -> defaultValue
         }
