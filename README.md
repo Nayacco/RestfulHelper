@@ -12,7 +12,11 @@
 <a href="https://plugins.jetbrains.com/plugin/17400-restfulhelper"><img src="https://img.shields.io/jetbrains/plugin/d/17400.svg"></a>
 </p>
 
-## Plugin info
+<!-- Plugin description -->
+
+This is a fork from [request-mapper](https://plugins.jetbrains.com/plugin/9567-request-mapper). Some bugs have been fixed, and some new features will be developed.
+
+## Plugin info 🌵
 
 #### 📙 Supported languages:
 
@@ -51,6 +55,8 @@ You can support the project by the following actions:
 * Report bugs
 * Tell your ideas
 
+<!-- Plugin description end -->
+
 ## Installation ⏳
 
 - Using IDE built-in plugin system:
@@ -63,6 +69,6 @@ You can support the project by the following actions:
   Download the [latest release](https://github.com/GoldSubmarine/RestfulHelper/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
-## 📄 License
+## License 📄
 
 This project is licensed under the MIT License.
