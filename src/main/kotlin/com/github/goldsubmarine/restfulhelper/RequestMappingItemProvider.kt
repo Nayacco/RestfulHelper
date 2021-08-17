@@ -16,8 +16,17 @@ import kotlin.text.MatchResult
 import kotlin.text.isEmpty
 
 open class RequestMappingItemProvider : ChooseByNameItemProvider {
+
+    override fun filterNames(
+        base: ChooseByNameBase,
+        names: Array<out String>,
+        pattern: String
+    ): List<String> {
+        return emptyList()
+    }
+
     override fun filterElements(
-        base: ChooseByNameViewModel,
+        base: ChooseByNameBase,
         pattern: String,
         everywhere: Boolean,
         indicator: ProgressIndicator,
@@ -27,16 +36,12 @@ open class RequestMappingItemProvider : ChooseByNameItemProvider {
             base.project!!.putUserData(ChooseByNamePopup.CURRENT_SEARCH_PATTERN, pattern)
         }
         val idFilter: IdFilter? = null
-        val searchScope = FindSymbolParameters.searchScopeFor(base.project, everywhere)
+        val searchScope = FindSymbolParameters.searchScopeFor(base.project!!, everywhere)
         val parameters = FindSymbolParameters(pattern, pattern, searchScope, idFilter)
 
         val namesList = getSortedResults(base, pattern, indicator, parameters)
         indicator.checkCanceled()
         return processByNames(base, everywhere, indicator, consumer, namesList, parameters)
-    }
-
-    override fun filterNames(base: ChooseByNameViewModel, names: Array<String>, pattern: String): List<String> {
-        return emptyList()
     }
 
     companion object {
