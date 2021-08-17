@@ -2,6 +2,7 @@ package com.github.goldsubmarine.restfulhelper
 
 import com.intellij.navigation.ItemPresentation
 import com.intellij.navigation.NavigationItem
+import com.intellij.openapi.util.IconLoader
 import com.intellij.pom.Navigatable
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElement
@@ -25,7 +26,7 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
         return "RequestMappingItem(psiElement=$psiElement, urlPath='$urlPath', requestMethod='$requestMethod', navigationElement=$navigationElement)"
     }
 
-    private inner class RequestMappingItemPresentation : ItemPresentation {
+    internal inner class RequestMappingItemPresentation : ItemPresentation {
 
         override fun getPresentableText() = this@RequestMappingItem.requestMethod + " " + this@RequestMappingItem.urlPath
 
