@@ -3,6 +3,5 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
-## [0.1.0]
 ### Added
-- 🎉 Initial release of the plugin
+- 🎉 release for 2021.2
