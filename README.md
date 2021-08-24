@@ -14,7 +14,7 @@
 
 <!-- Plugin description -->
 
-This is a fork from [request-mapper](https://plugins.jetbrains.com/plugin/9567-request-mapper). Some bugs have been fixed, and some new features will be developed.
+This is a fork from [request-mapper](https://plugins.jetbrains.com/plugin/9567-request-mapper). Some bugs have been fixed, and more features will be developed.
 
 ## Plugin info 🌵
 
@@ -54,6 +54,10 @@ You can support the project by the following actions:
 * Make pull requests
 * Report bugs
 * Tell your ideas
+
+| :zap: **wechat**           | :zap: **alipay**           |
+| ------------------------ | ------------------------ |
+|<img width=200 src="https://cdn.jsdelivr.net/gh/goldsubmarine/cdn@master/blog/donate_wechat.png"/>|<img width=200 src="https://cdn.jsdelivr.net/gh/goldsubmarine/cdn@master/blog/donate_alipay.png"/>|
 
 <!-- Plugin description end -->
 
