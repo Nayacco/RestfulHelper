@@ -10,7 +10,6 @@ import com.intellij.util.SmartList
 import com.intellij.util.SynchronizedCollectConsumer
 import com.intellij.util.containers.ContainerUtil
 import com.intellij.util.indexing.FindSymbolParameters
-import com.intellij.util.indexing.IdFilter
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap
 import kotlin.text.MatchResult
 import kotlin.text.isEmpty
@@ -26,9 +25,8 @@ open class RequestMappingItemProvider : ChooseByNameItemProvider {
         if (base.project != null) {
             base.project!!.putUserData(ChooseByNamePopup.CURRENT_SEARCH_PATTERN, pattern)
         }
-        val idFilter: IdFilter? = null
         val searchScope = FindSymbolParameters.searchScopeFor(base.project, everywhere)
-        val parameters = FindSymbolParameters(pattern, pattern, searchScope, idFilter)
+        val parameters = FindSymbolParameters(pattern, pattern, searchScope, null)
 
         val namesList = getSortedResults(base, pattern, indicator, parameters)
         indicator.checkCanceled()
