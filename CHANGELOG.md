@@ -3,6 +3,7 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+## [0.2.0-stable]
 ### Fix
 - remove internal api
 
