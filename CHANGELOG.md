@@ -3,6 +3,9 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+### Fix
+- Support IntelliJ IDEA higher than 2021.2
+
 ## [0.2.0-stable]
 ### Fix
 - remove internal api
