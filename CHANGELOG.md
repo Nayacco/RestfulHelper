@@ -3,6 +3,8 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+- Support IntelliJ IDEA 2021.3
+
 ## [0.2.1-stable]
 ### Fix
 - Support IntelliJ IDEA higher than 2021.2
