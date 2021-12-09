@@ -48,7 +48,7 @@ This is a fork from [request-mapper](https://plugins.jetbrains.com/plugin/9567-r
 ## Support the project 🧡
 
 You can support the project by the following actions:
-* Star this project on GitHub
+* Star this project on [GitHub](https://github.com/GoldSubmarine/RestfulHelper)
 * Share this plugin with your friends/colleagues
 * Rate this plugin on [JetBrains plugin repository](https://plugins.jetbrains.com/plugin/17400-restfulhelper)
 * Make pull requests
