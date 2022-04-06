@@ -26,7 +26,7 @@ open class RequestMappingItemProvider : ChooseByNameItemProvider {
             base.project!!.putUserData(ChooseByNamePopup.CURRENT_SEARCH_PATTERN, pattern)
         }
         val searchScope = FindSymbolParameters.searchScopeFor(base.project, everywhere)
-        val parameters = FindSymbolParameters(pattern, pattern, searchScope, null)
+        val parameters = FindSymbolParameters(pattern, pattern, searchScope)
 
         val namesList = getSortedResults(base, pattern, indicator, parameters)
         indicator.checkCanceled()
