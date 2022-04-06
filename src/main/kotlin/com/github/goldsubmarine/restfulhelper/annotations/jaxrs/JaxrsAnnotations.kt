@@ -2,6 +2,8 @@ package com.github.goldsubmarine.restfulhelper.annotations.jaxrs
 
 import com.intellij.psi.PsiAnnotation
 
+val JAXRS_PACKAGE_NAME = "javax.ws.rs"
+
 class GET(psiAnnotation: PsiAnnotation) : JaxRsMappingAnnotation(psiAnnotation) {
     override fun extractMethod() = "GET"
 }

@@ -2,6 +2,8 @@ package com.github.goldsubmarine.restfulhelper.annotations.micronaut
 
 import com.intellij.psi.PsiAnnotation
 
+val MICRONAUT_PACKAGE_NAME = "io.micronaut.http.annotation"
+
 class Delete(psiAnnotation: PsiAnnotation) : MicronautMappingAnnotation(psiAnnotation) {
     override fun extractMethod() = "DELETE"
 }

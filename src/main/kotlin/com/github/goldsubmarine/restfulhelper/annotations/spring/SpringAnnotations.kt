@@ -2,6 +2,7 @@ package com.github.goldsubmarine.restfulhelper.annotations.spring
 
 import com.intellij.psi.PsiAnnotation
 
+val SPRING_PACKAGE_NAME = "org.springframework.web.bind.annotation"
 
 class DeleteMapping(psiAnnotation: PsiAnnotation) : RequestMapping(psiAnnotation) {
     override fun extractMethod() = "DELETE"
