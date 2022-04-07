@@ -55,7 +55,7 @@ You can support the project by the following actions:
 * Report bugs
 * Tell your ideas
 
-| :zap: **wechat**           | :zap: **alipay**           |
+|  ⚡ **wechat**           | ⚡ **alipay**           |
 | ------------------------ | ------------------------ |
 |<img width=200 src="https://cdn.jsdelivr.net/gh/goldsubmarine/cdn@master/blog/donate_wechat.png"/>|<img width=200 src="https://cdn.jsdelivr.net/gh/goldsubmarine/cdn@master/blog/donate_alipay.png"/>|
 
