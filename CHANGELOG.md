@@ -3,6 +3,7 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+## [0.2.4-stable]
 - Remove deprecated api
 - Fix the problem of incorrectly identifying mybatis annotations
 
