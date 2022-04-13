@@ -4,6 +4,7 @@
 
 
 ## [Unreleased]
+## [0.2.5-stable]
 - Support IntelliJ IDEA 2022.1
 - Upgrade Gradle to 7.4.2
 - Upgrade org.jetbrains.intellij to 1.5.2
