@@ -5,6 +5,9 @@
 
 ## [Unreleased]
 - Support IntelliJ IDEA 2022.1
+- Upgrade Gradle to 7.4.2
+- Upgrade org.jetbrains.intellij to 1.5.2
+- Upgrade org.jetbrains.kotlin.jvm to 1.6.20
 
 ## [0.2.4-stable]
 - Remove deprecated api
