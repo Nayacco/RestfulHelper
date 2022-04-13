@@ -2,7 +2,11 @@
 
 # RestfulHelper Changelog
 
+
 ## [Unreleased]
+- Support IntelliJ IDEA 2022.1
+
+## [0.2.4-stable]
 - Remove deprecated api
 - Fix the problem of incorrectly identifying mybatis annotations
 
