@@ -10,7 +10,6 @@ class KotlinRequestMappingContributor : RequestMappingByNameContributor() {
 
     override fun getAnnotationSearchers(annotationName: String, project: Project): Sequence<PsiAnnotation> {
         return KotlinAnnotationsIndex
-            .getInstance()
             .get(annotationName, project, projectScope(project))
             .asSequence()
             .mapNotNull { it.toLightAnnotation() }
