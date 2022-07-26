@@ -4,8 +4,12 @@
 
 
 ## [Unreleased]
-## [0.2.6-stable]
 - Support IntelliJ IDEA 2022.2
+- Upgrade Java to 17
+- Remove deprecated api
+- Upgrade Gradle to 7.5
+- Upgrade org.jetbrains.intellij to 1.7.0
+- Upgrade org.jetbrains.changelog to 1.3.1
 
 ## [0.2.5-stable]
 - Support IntelliJ IDEA 2022.1
