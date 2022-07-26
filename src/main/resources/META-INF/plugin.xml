@@ -1,4 +1,4 @@
-<idea-plugin>
+<idea-plugin require-restart="false">
     <id>com.github.goldsubmarine.restfulhelper</id>
     <name>RestfulHelper</name>
     <vendor email="997462392@qq.com" url="https://github.com/GoldSubmarine">GoldSubmarine</vendor>
