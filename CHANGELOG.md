@@ -2,8 +2,9 @@
 
 # RestfulHelper Changelog
 
-
 ## [Unreleased]
+
+## [0.2.6-stable]
 - Support IntelliJ IDEA 2022.2
 - Upgrade Java to 17
 - Remove deprecated api
