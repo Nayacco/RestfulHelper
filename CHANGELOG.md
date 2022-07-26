@@ -4,6 +4,7 @@
 
 
 ## [Unreleased]
+## [0.2.6-stable]
 - Support IntelliJ IDEA 2022.2
 
 ## [0.2.5-stable]
