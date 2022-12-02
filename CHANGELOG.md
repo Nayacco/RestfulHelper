@@ -3,6 +3,8 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+
+## [0.2.7-stable]
 - Support IntelliJ IDEA 2022.3
 - Upgrade org.jetbrains.intellij to 1.10.0
 
