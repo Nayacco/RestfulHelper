@@ -3,6 +3,10 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+- Support IntelliJ IDEA 2023.1
+- Upgrade Gradle to 8.0.2
+- Upgrade org.jetbrains.kotlin.jvm to 1.8.10
+- Upgrade org.jetbrains.intellij to 1.13.3
 
 ## [0.2.7-stable]
 - Support IntelliJ IDEA 2022.3
