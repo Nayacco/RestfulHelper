@@ -2,7 +2,7 @@ package com.github.goldsubmarine.restfulhelper
 
 import com.intellij.navigation.ItemPresentation
 import com.intellij.navigation.NavigationItem
-import com.intellij.openapi.util.IconLoader
+import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.pom.Navigatable
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElement
@@ -34,12 +34,28 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
             val psiElement = this@RequestMappingItem.psiElement
             val fileName = psiElement.containingFile?.name
             return when (psiElement) {
-                is PsiMethod -> (psiElement.containingClass?.name ?: fileName ?: "unknownFile") + "." + psiElement.name
-                is PsiClass -> psiElement.name ?: fileName ?: "unknownFile"
+                is PsiMethod -> (psiElement.containingClass?.name ?: fileName ?: "unknownFile") + "." + psiElement.name + getPresentModuleName()
+                is PsiClass -> psiElement.name ?: fileName ?: "unknownFile" + getPresentModuleName()
                 else -> "unknownLocation"
             }
         }
 
         override fun getIcon(b: Boolean) = RequestMapperIcons.SEARCH
+
+        private fun getPresentModuleName(): String {
+            val moduleName = getModuleName()
+            if (moduleName.isEmpty()) {
+                return ""
+            }
+            val names = moduleName.split(""".""")
+            return " (" + if (names.size >= 2) { names[names.size - 2].uppercase() } else { names[0].uppercase() } + ")"
+        }
+
+        private fun getModuleName(): String {
+            val element = this@RequestMappingItem.psiElement
+            val file = element.containingFile.originalFile.virtualFile
+            val module = ProjectRootManager.getInstance(element.project).fileIndex.getModuleForFile(file)
+            return module?.name ?: ""
+        }
     }
 }
