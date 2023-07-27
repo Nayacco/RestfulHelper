@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 - Support IntelliJ IDEA 2023.2
+- Add module name to location
 
 ## [0.2.8-stable]
 - Support IntelliJ IDEA 2023.1
