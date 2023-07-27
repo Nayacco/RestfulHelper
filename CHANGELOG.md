@@ -3,6 +3,7 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+- Support IntelliJ IDEA 2023.2
 
 ## [0.2.8-stable]
 - Support IntelliJ IDEA 2023.1
