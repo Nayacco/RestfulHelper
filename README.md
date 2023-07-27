@@ -59,6 +59,8 @@ You can support the project by the following actions:
 | ------------------------ | ------------------------ |
 |<img width=200 src="https://cdn.jsdelivr.net/gh/goldsubmarine/cdn@master/blog/donate_wechat.png"/>|<img width=200 src="https://cdn.jsdelivr.net/gh/goldsubmarine/cdn@master/blog/donate_alipay.png"/>|
 
+> Thanks to the wechat user (*珩) who always gave me ten CNY to remind me that it's time for an update, that's what keeps me updating!
+
 <!-- Plugin description end -->
 
 ## Installation ⏳
