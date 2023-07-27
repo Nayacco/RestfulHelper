@@ -3,6 +3,8 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+
+## [0.3.0-stable]
 - Support IntelliJ IDEA 2023.2
 - Add module name to location
 
