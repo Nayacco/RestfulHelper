@@ -2,11 +2,13 @@ package com.github.goldsubmarine.restfulhelper
 
 import com.intellij.navigation.ItemPresentation
 import com.intellij.navigation.NavigationItem
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.pom.Navigatable
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiMethod
+import java.util.concurrent.atomic.AtomicReference
 
 class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String, private val requestMethod: String) : NavigationItem {
 
@@ -52,10 +54,16 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
         }
 
         private fun getModuleName(): String {
-            val element = this@RequestMappingItem.psiElement
-            val file = element.containingFile.originalFile.virtualFile
-            val module = ProjectRootManager.getInstance(element.project).fileIndex.getModuleForFile(file)
-            return module?.name ?: ""
+            val result: AtomicReference<String> = AtomicReference()
+
+            ApplicationManager.getApplication().runReadAction {
+                val element = this@RequestMappingItem.psiElement
+                val file = element.containingFile.originalFile.virtualFile
+                val module = ProjectRootManager.getInstance(element.project).fileIndex.getModuleForFile(file)
+                result.set(module?.name ?: "")
+            }
+
+            return result.get()
         }
     }
 }
