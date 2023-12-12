@@ -4,13 +4,14 @@ import com.intellij.navigation.ItemPresentation
 import com.intellij.navigation.NavigationItem
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.roots.ProjectRootManager
+import com.intellij.openapi.util.Computable
 import com.intellij.pom.Navigatable
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiMethod
-import java.util.concurrent.atomic.AtomicReference
 
-class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String, private val requestMethod: String) : NavigationItem {
+class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String, private val requestMethod: String) :
+    NavigationItem {
 
     private val navigationElement = psiElement.navigationElement as? Navigatable
 
@@ -33,13 +34,16 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
         override fun getPresentableText() = this@RequestMappingItem.requestMethod + " " + this@RequestMappingItem.urlPath
 
         override fun getLocationString(): String {
-            val psiElement = this@RequestMappingItem.psiElement
-            val fileName = psiElement.containingFile?.name
-            return when (psiElement) {
-                is PsiMethod -> (psiElement.containingClass?.name ?: fileName ?: "unknownFile") + "." + psiElement.name + getPresentModuleName()
-                is PsiClass -> psiElement.name ?: fileName ?: "unknownFile" + getPresentModuleName()
-                else -> "unknownLocation"
-            }
+
+            return ApplicationManager.getApplication().runReadAction(Computable {
+                val psiElement = this@RequestMappingItem.psiElement
+                val fileName = psiElement.containingFile?.name
+                when (psiElement) {
+                    is PsiMethod -> (psiElement.containingClass?.name ?: fileName ?: "unknownFile") + "." + psiElement.name + getPresentModuleName()
+                    is PsiClass -> psiElement.name ?: fileName ?: "unknownFile" + getPresentModuleName()
+                    else -> "unknownLocation"
+                }
+            })
         }
 
         override fun getIcon(b: Boolean) = RequestMapperIcons.SEARCH
@@ -54,16 +58,13 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
         }
 
         private fun getModuleName(): String {
-            val result: AtomicReference<String> = AtomicReference()
-
-            ApplicationManager.getApplication().runReadAction {
+            return ApplicationManager.getApplication().runReadAction(Computable {
                 val element = this@RequestMappingItem.psiElement
                 val file = element.containingFile.originalFile.virtualFile
                 val module = ProjectRootManager.getInstance(element.project).fileIndex.getModuleForFile(file)
-                result.set(module?.name ?: "")
-            }
 
-            return result.get()
+                module?.name ?: ""
+            })
         }
     }
 }
