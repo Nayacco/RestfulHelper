@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+## [0.4.2-stable]
+- Support IntelliJ IDEA 2024.1
+
 ## [0.4.0-stable]
 - Support IntelliJ IDEA 2023.3
 
