@@ -3,6 +3,7 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+- Support IntelliJ IDEA 2024.2
 
 ## [0.4.2-stable]
 - Support IntelliJ IDEA 2024.1
