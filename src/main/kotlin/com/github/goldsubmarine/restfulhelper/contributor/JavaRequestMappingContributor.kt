@@ -10,7 +10,7 @@ class JavaRequestMappingContributor : RequestMappingByNameContributor() {
     override fun getAnnotationSearchers(annotationName: String, project: Project): Sequence<PsiAnnotation> {
         return JavaAnnotationIndex
             .getInstance()
-            .get(annotationName, project, GlobalSearchScope.projectScope(project))
+            .getAnnotations(annotationName, project, GlobalSearchScope.projectScope(project))
             .asSequence()
     }
 }

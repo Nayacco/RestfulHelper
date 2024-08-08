@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 - Support IntelliJ IDEA 2024.2
+- Upgrade Gradle to 8.9
+- Upgrade Kotlin to 1.9.24
+- Upgrade org.jetbrains.intellij.platform to 2.0.0
+- Remove deprecated api org.apache.commons.lang.StringEscapeUtils
+- Upgrade Java to 21
 
 ## [0.4.2-stable]
 - Support IntelliJ IDEA 2024.1

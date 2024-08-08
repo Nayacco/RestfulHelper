@@ -4,7 +4,7 @@ import com.github.goldsubmarine.restfulhelper.utils.addCurlyBrackets
 import com.github.goldsubmarine.restfulhelper.utils.inCurlyBrackets
 import com.github.goldsubmarine.restfulhelper.utils.isNumeric
 import com.github.goldsubmarine.restfulhelper.utils.unquoteCurlyBrackets
-import org.apache.commons.lang.StringEscapeUtils
+import org.apache.commons.text.StringEscapeUtils
 
 class PathElement(val value: String) {
     val isPathVariable: Boolean = value.inCurlyBrackets()
