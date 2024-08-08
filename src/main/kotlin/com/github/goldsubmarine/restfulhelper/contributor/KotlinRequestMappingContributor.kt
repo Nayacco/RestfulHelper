@@ -9,8 +9,7 @@ import org.jetbrains.kotlin.idea.stubindex.KotlinAnnotationsIndex
 class KotlinRequestMappingContributor : RequestMappingByNameContributor() {
 
     override fun getAnnotationSearchers(annotationName: String, project: Project): Sequence<PsiAnnotation> {
-        return KotlinAnnotationsIndex
-            .get(annotationName, project, projectScope(project))
+        return KotlinAnnotationsIndex[annotationName, project, projectScope(project)]
             .asSequence()
             .mapNotNull { it.toLightAnnotation() }
     }

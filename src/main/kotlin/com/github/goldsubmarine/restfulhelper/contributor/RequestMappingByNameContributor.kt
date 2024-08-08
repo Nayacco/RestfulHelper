@@ -36,7 +36,6 @@ abstract class RequestMappingByNameContributor(
 
     private fun findRequestMappingItems(project: Project, annotationName: String): List<RequestMappingItem> {
         return getAnnotationSearchers(annotationName, project)
-            .filterNotNull()
             .filter { it.isMethodAnnotation() }
             .filter {
                 it.qualifiedName!!.contains(MICRONAUT_PACKAGE_NAME)

@@ -1,6 +1,5 @@
 package com.github.goldsubmarine.restfulhelper
 
-import com.github.goldsubmarine.restfulhelper.RequestMappingItemProvider
 import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider
 import com.intellij.ide.util.gotoByName.FilteringGotoByModel
 import com.intellij.navigation.ChooseByNameContributor

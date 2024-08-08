@@ -15,7 +15,7 @@ import com.github.goldsubmarine.restfulhelper.utils.fetchAnnotatedMethod
 import com.github.goldsubmarine.restfulhelper.utils.unquote
 
 abstract class MicronautMappingAnnotation(
-    val psiAnnotation: PsiAnnotation,
+    private val psiAnnotation: PsiAnnotation,
     private val urlFormatter: UrlFormatter = MicronautUrlFormatter
 ) : MappingAnnotation {
 

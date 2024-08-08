@@ -9,7 +9,7 @@ import org.apache.commons.text.StringEscapeUtils
 class PathElement(val value: String) {
     val isPathVariable: Boolean = value.inCurlyBrackets()
 
-    fun addPathVariableType(type: String) = if (isPathVariable) PathElement(value.unquoteCurlyBrackets().let { "${if (type.isBlank()) "String" else type}:$it" }.addCurlyBrackets())
+    fun addPathVariableType(type: String) = if (isPathVariable) PathElement(value.unquoteCurlyBrackets().let { "${type.ifBlank { "String" }}:$it" }.addCurlyBrackets())
     else this
 
     private fun compareWithPathVariable(pathElement: PathElement, searchPattern: PathElement): Boolean =
@@ -70,9 +70,7 @@ class PathElement(val value: String) {
 
         other as PathElement
 
-        if (value != other.value) return false
-
-        return true
+        return value == other.value
     }
 
     override fun hashCode(): Int {

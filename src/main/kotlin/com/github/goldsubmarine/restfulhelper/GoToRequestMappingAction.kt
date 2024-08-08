@@ -15,7 +15,7 @@ class GoToRequestMappingAction : GotoActionBase(), DumbAware {
         showNavigationPopup(e, requestMappingModel, GoToRequestMappingActionCallback(), null, true, false)
     }
 
-    private class GoToRequestMappingActionCallback : GotoActionBase.GotoActionCallback<String>() {
+    private class GoToRequestMappingActionCallback : GotoActionCallback<String>() {
 
         override fun elementChosen(popup: ChooseByNamePopup, element: Any) {
             if (element is RequestMappingItem && element.canNavigate()) {

@@ -40,7 +40,7 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
                 val fileName = psiElement.containingFile?.name
                 when (psiElement) {
                     is PsiMethod -> (psiElement.containingClass?.name ?: fileName ?: "unknownFile") + "." + psiElement.name + getPresentModuleName()
-                    is PsiClass -> psiElement.name ?: fileName ?: "unknownFile" + getPresentModuleName()
+                    is PsiClass -> psiElement.name ?: fileName ?: ("unknownFile" + getPresentModuleName())
                     else -> "unknownLocation"
                 }
             })

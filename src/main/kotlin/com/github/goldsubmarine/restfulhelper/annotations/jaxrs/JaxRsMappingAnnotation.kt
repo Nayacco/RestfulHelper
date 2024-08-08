@@ -14,7 +14,7 @@ import com.github.goldsubmarine.restfulhelper.model.PathParameter
 import com.github.goldsubmarine.restfulhelper.utils.fetchAnnotatedMethod
 
 abstract class JaxRsMappingAnnotation(
-    val psiAnnotation: PsiAnnotation,
+    private val psiAnnotation: PsiAnnotation,
     private val urlFormatter: UrlFormatter = JaxRsUrlFormatter
 ) : MappingAnnotation {
 
