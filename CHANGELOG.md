@@ -3,6 +3,12 @@
 # RestfulHelper Changelog
 
 ## [Unreleased]
+- Support IntelliJ IDEA 2024.3
+- Upgrade Kotlin to 2.0.21
+- Upgrade org.jetbrains.intellij.platform to 2.1.0
+- Upgrade platformVersion to 2024.3
+
+## [0.4.3-stable]
 - Support IntelliJ IDEA 2024.2
 - Upgrade Gradle to 8.9
 - Upgrade Kotlin to 1.9.24
