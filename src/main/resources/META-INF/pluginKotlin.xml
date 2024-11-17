@@ -1,5 +1,5 @@
 <idea-plugin require-restart="false">
-    <extensions defaultExtensionNs="com.github.goldsubmarine.restfulhelper">
-        <requestMappingContributor implementation="com.github.goldsubmarine.restfulhelper.contributor.KotlinRequestMappingContributor"/>
+    <extensions defaultExtensionNs="com.github.nayacco.restfulhelper">
+        <requestMappingContributor implementation="com.github.nayacco.restfulhelper.contributor.KotlinRequestMappingContributor"/>
     </extensions>
 </idea-plugin>

@@ -1,7 +1,7 @@
 <idea-plugin require-restart="false">
-    <id>com.github.goldsubmarine.restfulhelper</id>
+    <id>com.github.nayacco.restfulhelper</id>
     <name>RestfulHelper</name>
-    <vendor email="997462392@qq.com" url="https://github.com/GoldSubmarine">GoldSubmarine</vendor>
+    <vendor email="caowenjun.0130@gmail.com" url="https://github.com/Nayacco">Nayacco</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -10,7 +10,7 @@
     <depends optional="true" config-file="pluginKotlin.xml">org.jetbrains.kotlin</depends>
 
     <actions>
-        <action id="GoToRequestMapping" class="com.github.goldsubmarine.restfulhelper.GoToRequestMappingAction"
+        <action id="GoToRequestMapping" class="com.github.nayacco.restfulhelper.GoToRequestMappingAction"
           text="Request Mapping" description="Request mapping">
             <add-to-group group-id="GoToTargetEx" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH"/>
@@ -22,10 +22,10 @@
     </extensionPoints>
 
     <extensions  defaultExtensionNs="com.intellij">
-        <searchEverywhereContributor implementation="com.github.goldsubmarine.restfulhelper.RequestMappingGoToContributor$Factory"/>
+        <searchEverywhereContributor implementation="com.github.nayacco.restfulhelper.RequestMappingGoToContributor$Factory"/>
     </extensions>
 
-    <extensions defaultExtensionNs="com.github.goldsubmarine.restfulhelper">
-        <requestMappingContributor implementation="com.github.goldsubmarine.restfulhelper.contributor.JavaRequestMappingContributor"/>
+    <extensions defaultExtensionNs="com.github.nayacco.restfulhelper">
+        <requestMappingContributor implementation="com.github.nayacco.restfulhelper.contributor.JavaRequestMappingContributor"/>
     </extensions>
 </idea-plugin>

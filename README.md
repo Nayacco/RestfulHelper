@@ -7,7 +7,7 @@
 <p align="center">RestfulHelper is for IntelliJ IDEA for quick navigation to URL mapping declarations.</p>
 
 <p align="center">
-<a href="https://github.com/GoldSubmarine/RestfulHelper/actions"><img src="https://github.com/GoldSubmarine/RestfulHelper/workflows/Build/badge.svg"></a>
+<a href="https://github.com/Nayacco/RestfulHelper/actions"><img src="https://github.com/Nayacco/RestfulHelper/workflows/Build/badge.svg"></a>
 <a href="https://plugins.jetbrains.com/plugin/17400-restfulhelper"><img src="https://img.shields.io/jetbrains/plugin/v/17400.svg"></a>
 <a href="https://plugins.jetbrains.com/plugin/17400-restfulhelper"><img src="https://img.shields.io/jetbrains/plugin/d/17400.svg"></a>
 </p>
@@ -48,7 +48,7 @@ This is a fork from [request-mapper](https://plugins.jetbrains.com/plugin/9567-r
 ## Support the project 🧡
 
 You can support the project by the following actions:
-* Star this project on [GitHub](https://github.com/GoldSubmarine/RestfulHelper)
+* Star this project on [GitHub](https://github.com/Nayacco/RestfulHelper)
 * Share this plugin with your friends/colleagues
 * Rate this plugin on [JetBrains plugin repository](https://plugins.jetbrains.com/plugin/17400-restfulhelper)
 * Make pull requests
@@ -57,7 +57,7 @@ You can support the project by the following actions:
 
 |  ⚡ **wechat**           | ⚡ **alipay**           |
 | ------------------------ | ------------------------ |
-|<img width=200 src="https://cdn.jsdelivr.net/gh/goldsubmarine/cdn@master/blog/donate_wechat.png"/>|<img width=200 src="https://cdn.jsdelivr.net/gh/goldsubmarine/cdn@master/blog/donate_alipay.png"/>|
+|<img width=200 src="https://cdn.jsdelivr.net/gh/nayacco/cdn@master/blog/donate_wechat.png"/>|<img width=200 src="https://cdn.jsdelivr.net/gh/nayacco/cdn@master/blog/donate_alipay.png"/>|
 
 > Thanks to the wechat user (*珩) who always gave me ten CNY to remind me that it's time for an update, that's what keeps me updating!
 
@@ -72,7 +72,7 @@ You can support the project by the following actions:
   
 - Manually:
 
-  Download the [latest release](https://github.com/GoldSubmarine/RestfulHelper/releases/latest) and install it manually using
+  Download the [latest release](https://github.com/Nayacco/RestfulHelper/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 ## License 📄
