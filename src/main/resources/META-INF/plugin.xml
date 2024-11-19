@@ -1,5 +1,5 @@
 <idea-plugin require-restart="false">
-    <id>com.github.goldsubmarine.restfulhelper</id>
+    <id>com.github.nayacco.restfulhelper</id>
     <name>RestfulHelper</name>
     <vendor email="caowenjun.0130@gmail.com" url="https://github.com/Nayacco">Nayacco</vendor>
 
