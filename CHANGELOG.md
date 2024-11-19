@@ -4,9 +4,7 @@
 
 ## [Unreleased]
 
-- Resolve [issue-51](https://github.com/Nayacco/RestfulHelper/issues/51)
-
-## [0.4.5-stable]
+## [0.4.7-stable]
 
 - Resolve [issue-51](https://github.com/Nayacco/RestfulHelper/issues/51)
 
