@@ -6,6 +6,10 @@
 
 - Resolve [issue-51](https://github.com/Nayacco/RestfulHelper/issues/51)
 
+## [0.4.5-stable]
+
+- Resolve [issue-51](https://github.com/Nayacco/RestfulHelper/issues/51)
+
 ## [0.4.4-stable] - 2024-11-17
 
 - Support IntelliJ IDEA 2024.3
