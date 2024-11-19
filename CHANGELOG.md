@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.4.6-stable] - 2024-11-19
+
 - Resolve [issue-51](https://github.com/Nayacco/RestfulHelper/issues/51)
 
 ## [0.4.5-stable]
@@ -94,7 +96,9 @@
 
 - 🎉 release for 2021.2
 
-[Unreleased]: https://github.com/Nayacco/RestfulHelper/compare/v0.4.4-stable...HEAD
+[Unreleased]: https://github.com/Nayacco/RestfulHelper/compare/v0.4.6-stable...HEAD
+[0.4.6-stable]: https://github.com/Nayacco/RestfulHelper/compare/v0.4.5-stable...v0.4.6-stable
+[0.4.5-stable]: https://github.com/Nayacco/RestfulHelper/compare/v0.4.4-stable...v0.4.5-stable
 [0.4.4-stable]: https://github.com/Nayacco/RestfulHelper/compare/v0.4.3-stable...v0.4.4-stable
 [0.4.3-stable]: https://github.com/Nayacco/RestfulHelper/compare/v0.4.2-stable...v0.4.3-stable
 [0.4.2-stable]: https://github.com/Nayacco/RestfulHelper/compare/v0.4.0-stable...v0.4.2-stable
