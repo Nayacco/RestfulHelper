@@ -1,27 +1,11 @@
 package com.github.nayacco.restfulhelper.annotations
 
-import com.intellij.psi.PsiAnnotation
 import com.github.nayacco.restfulhelper.RequestMappingItem
-import com.github.nayacco.restfulhelper.annotations.jaxrs.DELETE
-import com.github.nayacco.restfulhelper.annotations.jaxrs.GET
-import com.github.nayacco.restfulhelper.annotations.jaxrs.HEAD
-import com.github.nayacco.restfulhelper.annotations.jaxrs.OPTIONS
-import com.github.nayacco.restfulhelper.annotations.jaxrs.PATCH
-import com.github.nayacco.restfulhelper.annotations.jaxrs.POST
-import com.github.nayacco.restfulhelper.annotations.jaxrs.PUT
-import com.github.nayacco.restfulhelper.annotations.micronaut.Delete
-import com.github.nayacco.restfulhelper.annotations.micronaut.Get
-import com.github.nayacco.restfulhelper.annotations.micronaut.Head
-import com.github.nayacco.restfulhelper.annotations.micronaut.Options
-import com.github.nayacco.restfulhelper.annotations.micronaut.Patch
-import com.github.nayacco.restfulhelper.annotations.micronaut.Post
-import com.github.nayacco.restfulhelper.annotations.micronaut.Put
-import com.github.nayacco.restfulhelper.annotations.spring.DeleteMapping
-import com.github.nayacco.restfulhelper.annotations.spring.GetMapping
-import com.github.nayacco.restfulhelper.annotations.spring.PatchMapping
-import com.github.nayacco.restfulhelper.annotations.spring.PostMapping
-import com.github.nayacco.restfulhelper.annotations.spring.PutMapping
-import com.github.nayacco.restfulhelper.annotations.spring.RequestMapping
+import com.github.nayacco.restfulhelper.annotations.jakartars.*
+import com.github.nayacco.restfulhelper.annotations.jaxrs.*
+import com.github.nayacco.restfulhelper.annotations.micronaut.*
+import com.github.nayacco.restfulhelper.annotations.spring.*
+import com.intellij.psi.PsiAnnotation
 
 interface MappingAnnotation {
 
@@ -54,6 +38,7 @@ interface MappingAnnotation {
         )
 
         fun mappingAnnotation(annotationName: String, psiAnnotation: PsiAnnotation): MappingAnnotation {
+            val isJakartaPackage = psiAnnotation.qualifiedName!!.contains(JAKARTARS_PACKAGE_NAME)
             return when (annotationName) {
                 RequestMapping::class.java.simpleName -> RequestMapping(psiAnnotation)
                 GetMapping::class.java.simpleName -> GetMapping(psiAnnotation)
@@ -62,13 +47,13 @@ interface MappingAnnotation {
                 PatchMapping::class.java.simpleName -> PatchMapping(psiAnnotation)
                 DeleteMapping::class.java.simpleName -> DeleteMapping(psiAnnotation)
 
-                GET::class.java.simpleName -> GET(psiAnnotation)
-                PUT::class.java.simpleName -> PUT(psiAnnotation)
-                POST::class.java.simpleName -> POST(psiAnnotation)
-                OPTIONS::class.java.simpleName -> OPTIONS(psiAnnotation)
-                HEAD::class.java.simpleName -> HEAD(psiAnnotation)
-                DELETE::class.java.simpleName -> DELETE(psiAnnotation)
-                PATCH::class.java.simpleName -> PATCH(psiAnnotation)
+                GET::class.java.simpleName -> if (isJakartaPackage) JakartaGet(psiAnnotation) else GET(psiAnnotation)
+                PUT::class.java.simpleName -> if (isJakartaPackage) JakartaPut(psiAnnotation) else PUT(psiAnnotation)
+                POST::class.java.simpleName -> if (isJakartaPackage) JakartaPost(psiAnnotation) else POST(psiAnnotation)
+                OPTIONS::class.java.simpleName -> if (isJakartaPackage) JakartaOptions(psiAnnotation) else OPTIONS(psiAnnotation)
+                HEAD::class.java.simpleName -> if (isJakartaPackage) JakartaHead(psiAnnotation) else HEAD(psiAnnotation)
+                DELETE::class.java.simpleName -> if (isJakartaPackage) JakartaDelete(psiAnnotation) else DELETE(psiAnnotation)
+                PATCH::class.java.simpleName -> if (isJakartaPackage) JakartaPatch(psiAnnotation) else PATCH(psiAnnotation)
 
                 Get::class.java.simpleName -> Get(psiAnnotation)
                 Put::class.java.simpleName -> Put(psiAnnotation)
