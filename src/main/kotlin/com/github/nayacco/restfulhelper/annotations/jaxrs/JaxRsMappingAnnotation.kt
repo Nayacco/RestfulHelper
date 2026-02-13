@@ -18,6 +18,11 @@ abstract class JaxRsMappingAnnotation(
     private val urlFormatter: UrlFormatter = JaxRsUrlFormatter
 ) : MappingAnnotation {
 
+    // psiAnnotation의 qualifiedName에서 javax/jakarta 네임스페이스를 자동 감지
+    private val namespace: String = detectNamespace()
+    private val pathAnnotation: String = "$namespace.Path"
+    private val pathParamAnnotation: String = "$namespace.PathParam"
+
     override fun values(): List<RequestMappingItem> =
         fetchRequestMappingItem(psiAnnotation.fetchAnnotatedMethod(), extractMethod())
 
@@ -34,7 +39,7 @@ abstract class JaxRsMappingAnnotation(
             .containingClass
             ?.modifierList
             ?.annotations
-            ?.filter { it.qualifiedName == PATH_ANNOTATION }
+            ?.filter { it.qualifiedName == pathAnnotation }
             ?.flatMap { PathAnnotation(it).fetchMappings(ATTRIBUTE_NAME) }
             ?.firstOrNull() ?: ""
     }
@@ -43,13 +48,13 @@ abstract class JaxRsMappingAnnotation(
         val parametersNameWithType = method
             .parameterList
             .parameters
-            .mapNotNull { PathParameter(it).extractParameterNameWithType(PATH_PARAM_ANNOTATION, ::extractParameterNameFromAnnotation) }
+            .mapNotNull { PathParameter(it).extractParameterNameWithType(pathParamAnnotation, ::extractParameterNameFromAnnotation) }
             .toMap()
 
         return method
             .modifierList
             .annotations
-            .filter { it.qualifiedName == PATH_ANNOTATION }
+            .filter { it.qualifiedName == pathAnnotation }
             .flatMap { PathAnnotation(it).fetchMappings(ATTRIBUTE_NAME) }
             .map { Path(it).addPathVariablesTypes(parametersNameWithType).toFullPath() }
             .firstOrNull() ?: ""
@@ -69,9 +74,13 @@ abstract class JaxRsMappingAnnotation(
         }
     }
 
+    // 어노테이션의 FQCN 접두사로 jakarta/javax 네임스페이스를 판별
+    private fun detectNamespace(): String {
+        val qn = psiAnnotation.qualifiedName ?: return JAXRS_PACKAGE_NAME
+        return if (qn.startsWith("jakarta.")) JAKARTA_PACKAGE_NAME else JAXRS_PACKAGE_NAME
+    }
+
     companion object {
-        private const val PATH_ANNOTATION = "javax.ws.rs.Path"
         private const val ATTRIBUTE_NAME = "value"
-        private const val PATH_PARAM_ANNOTATION = "javax.ws.rs.PathParam"
     }
 }
