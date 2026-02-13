@@ -2,13 +2,13 @@ package com.github.nayacco.restfulhelper.annotations
 
 import com.intellij.psi.PsiAnnotation
 import com.github.nayacco.restfulhelper.RequestMappingItem
-import com.github.nayacco.restfulhelper.annotations.jaxrs.DELETE
-import com.github.nayacco.restfulhelper.annotations.jaxrs.GET
-import com.github.nayacco.restfulhelper.annotations.jaxrs.HEAD
-import com.github.nayacco.restfulhelper.annotations.jaxrs.OPTIONS
-import com.github.nayacco.restfulhelper.annotations.jaxrs.PATCH
-import com.github.nayacco.restfulhelper.annotations.jaxrs.POST
-import com.github.nayacco.restfulhelper.annotations.jaxrs.PUT
+import com.github.nayacco.restfulhelper.annotations.ws.DELETE
+import com.github.nayacco.restfulhelper.annotations.ws.GET
+import com.github.nayacco.restfulhelper.annotations.ws.HEAD
+import com.github.nayacco.restfulhelper.annotations.ws.OPTIONS
+import com.github.nayacco.restfulhelper.annotations.ws.PATCH
+import com.github.nayacco.restfulhelper.annotations.ws.POST
+import com.github.nayacco.restfulhelper.annotations.ws.PUT
 import com.github.nayacco.restfulhelper.annotations.micronaut.Delete
 import com.github.nayacco.restfulhelper.annotations.micronaut.Get
 import com.github.nayacco.restfulhelper.annotations.micronaut.Head

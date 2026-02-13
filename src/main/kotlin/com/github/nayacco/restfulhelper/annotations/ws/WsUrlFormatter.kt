@@ -1,9 +1,9 @@
-package com.github.nayacco.restfulhelper.annotations.jaxrs
+package com.github.nayacco.restfulhelper.annotations.ws
 
 import com.github.nayacco.restfulhelper.annotations.UrlFormatter
 import com.github.nayacco.restfulhelper.utils.dropFirstEmptyStringIfExists
 
-object JaxRsUrlFormatter : UrlFormatter {
+object WsUrlFormatter : UrlFormatter {
 
     override fun format(classMapping: String, methodMapping: String, param: String): String {
         val classPathSeq = classMapping.splitToSequence('/').filterNot { it.isBlank() }
