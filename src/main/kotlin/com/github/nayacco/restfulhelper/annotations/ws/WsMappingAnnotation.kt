@@ -1,4 +1,4 @@
-package com.github.nayacco.restfulhelper.annotations.jaxrs
+package com.github.nayacco.restfulhelper.annotations.ws
 
 import com.intellij.psi.PsiAnnotation
 import com.intellij.psi.PsiLiteralExpression
@@ -13,9 +13,9 @@ import com.github.nayacco.restfulhelper.model.Path
 import com.github.nayacco.restfulhelper.model.PathParameter
 import com.github.nayacco.restfulhelper.utils.fetchAnnotatedMethod
 
-abstract class JaxRsMappingAnnotation(
+abstract class WsMappingAnnotation(
     private val psiAnnotation: PsiAnnotation,
-    private val urlFormatter: UrlFormatter = JaxRsUrlFormatter
+    private val urlFormatter: UrlFormatter = WsUrlFormatter
 ) : MappingAnnotation {
 
     // psiAnnotation의 qualifiedName에서 javax/jakarta 네임스페이스를 자동 감지
@@ -76,8 +76,8 @@ abstract class JaxRsMappingAnnotation(
 
     // 어노테이션의 FQCN 접두사로 jakarta/javax 네임스페이스를 판별
     private fun detectNamespace(): String {
-        val qn = psiAnnotation.qualifiedName ?: return JAXRS_PACKAGE_NAME
-        return if (qn.startsWith("jakarta.")) JAKARTA_PACKAGE_NAME else JAXRS_PACKAGE_NAME
+        val qn = psiAnnotation.qualifiedName ?: return JAVAX_WS_PACKAGE
+        return if (qn.startsWith("jakarta.")) JAKARTA_WS_PACKAGE else JAVAX_WS_PACKAGE
     }
 
     companion object {
