@@ -31,7 +31,8 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
 
     internal inner class RequestMappingItemPresentation : ItemPresentation {
 
-        override fun getPresentableText() = this@RequestMappingItem.requestMethod + " " + this@RequestMappingItem.urlPath
+        // HTTP method is represented by icon, so show only URL path in popup text.
+        override fun getPresentableText() = this@RequestMappingItem.urlPath
 
         override fun getLocationString(): String {
 
