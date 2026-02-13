@@ -4,3 +4,9 @@
 .qodana
 .kotlin
 build
+
+.DS_Store
+CLAUDE.md
+AGENTS.md
+.claude/
+.codex/
