@@ -7,6 +7,7 @@ import com.intellij.psi.PsiAnnotation
 import com.github.nayacco.restfulhelper.RequestMappingItem
 import com.github.nayacco.restfulhelper.annotations.MappingAnnotation.Companion.mappingAnnotation
 import com.github.nayacco.restfulhelper.annotations.MappingAnnotation.Companion.supportedAnnotations
+import com.github.nayacco.restfulhelper.annotations.jaxrs.JAKARTA_PACKAGE_NAME
 import com.github.nayacco.restfulhelper.annotations.jaxrs.JAXRS_PACKAGE_NAME
 import com.github.nayacco.restfulhelper.annotations.micronaut.MICRONAUT_PACKAGE_NAME
 import com.github.nayacco.restfulhelper.annotations.spring.SPRING_PACKAGE_NAME
@@ -41,6 +42,7 @@ abstract class RequestMappingByNameContributor(
                 it.qualifiedName!!.contains(MICRONAUT_PACKAGE_NAME)
                     || it.qualifiedName!!.contains(SPRING_PACKAGE_NAME)
                     || it.qualifiedName!!.contains(JAXRS_PACKAGE_NAME)
+                    || it.qualifiedName!!.contains(JAKARTA_PACKAGE_NAME)
             }
             .map { annotation -> mappingAnnotation(annotationName, annotation) }
             .flatMap { mappingAnnotation -> mappingAnnotation.values().asSequence() }
