@@ -3,6 +3,7 @@ package com.github.nayacco.restfulhelper.annotations.jaxrs
 import com.intellij.psi.PsiAnnotation
 
 const val JAXRS_PACKAGE_NAME = "javax.ws.rs"
+const val JAKARTA_PACKAGE_NAME = "jakarta.ws.rs"
 
 class GET(psiAnnotation: PsiAnnotation) : JaxRsMappingAnnotation(psiAnnotation) {
     override fun extractMethod() = "GET"
