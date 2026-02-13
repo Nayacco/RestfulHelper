@@ -5,7 +5,7 @@ import com.intellij.openapi.util.IconLoader
 object RequestMapperIcons {
     val SEARCH = IconLoader.getIcon("/icons/search.png", RequestMapperIcons::class.java)
 
-    // HTTP 메서드별 아이콘
+    // HTTP method-specific icons
     val GET = IconLoader.getIcon("/icons/method_get.svg", RequestMapperIcons::class.java)
     val POST = IconLoader.getIcon("/icons/method_post.svg", RequestMapperIcons::class.java)
     val PUT = IconLoader.getIcon("/icons/method_put.svg", RequestMapperIcons::class.java)

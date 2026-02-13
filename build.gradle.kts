@@ -128,6 +128,11 @@ kover {
 }
 
 tasks {
+    // IDE가 실행 중일 때 H2 잠금 충돌을 방지하기 위해 비활성화
+    buildSearchableOptions {
+        enabled = false
+    }
+
     wrapper {
         gradleVersion = providers.gradleProperty("gradleVersion").get()
     }

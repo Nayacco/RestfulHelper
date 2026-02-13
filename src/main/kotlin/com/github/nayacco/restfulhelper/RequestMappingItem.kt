@@ -46,7 +46,7 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
             })
         }
 
-        // HTTP 메서드별 아이콘 반환
+        // Return icon based on HTTP method
         override fun getIcon(b: Boolean) = when (this@RequestMappingItem.requestMethod) {
             "GET" -> RequestMapperIcons.GET
             "POST" -> RequestMapperIcons.POST
