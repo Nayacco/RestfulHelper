@@ -46,7 +46,15 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
             })
         }
 
-        override fun getIcon(b: Boolean) = RequestMapperIcons.SEARCH
+        // HTTP 메서드별 아이콘 반환
+        override fun getIcon(b: Boolean) = when (this@RequestMappingItem.requestMethod) {
+            "GET" -> RequestMapperIcons.GET
+            "POST" -> RequestMapperIcons.POST
+            "PUT" -> RequestMapperIcons.PUT
+            "DELETE" -> RequestMapperIcons.DELETE
+            "PATCH" -> RequestMapperIcons.PATCH
+            else -> RequestMapperIcons.DEFAULT
+        }
 
         private fun getPresentModuleName(): String {
             val moduleName = getModuleName()
