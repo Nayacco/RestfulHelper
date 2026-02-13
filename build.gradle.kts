@@ -126,11 +126,6 @@ kover {
 }
 
 tasks {
-    // Disabled to prevent H2 lock conflicts while the IDE is running
-    buildSearchableOptions {
-        enabled = false
-    }
-
     wrapper {
         gradleVersion = providers.gradleProperty("gradleVersion").get()
     }
