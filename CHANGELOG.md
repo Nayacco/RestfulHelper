@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+- Add HTTP method-specific color icons (GET, POST, PUT, DELETE, PATCH) in search popup
+
 ## [0.4.7-stable]
 
 - Resolve [issue-51](https://github.com/Nayacco/RestfulHelper/issues/51)

@@ -1,6 +1,5 @@
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
-import org.jetbrains.intellij.platform.gradle.Constants.Constraints
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 plugins {
@@ -45,7 +44,6 @@ dependencies {
         // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file for plugin from JetBrains Marketplace.
         plugins(providers.gradleProperty("platformPlugins").map { it.split(',') })
 
-        instrumentationTools()
         pluginVerifier()
         zipSigner()
         testFramework(TestFrameworkType.Platform)
@@ -150,6 +148,6 @@ val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
     }
 
     plugins {
-        robotServerPlugin(Constraints.LATEST_VERSION)
+        robotServerPlugin()
     }
 }

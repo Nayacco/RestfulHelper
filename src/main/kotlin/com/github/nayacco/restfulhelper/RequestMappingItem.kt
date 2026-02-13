@@ -31,7 +31,8 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
 
     internal inner class RequestMappingItemPresentation : ItemPresentation {
 
-        override fun getPresentableText() = this@RequestMappingItem.requestMethod + " " + this@RequestMappingItem.urlPath
+        // HTTP method is represented by icon, so show only URL path in popup text.
+        override fun getPresentableText() = this@RequestMappingItem.urlPath
 
         override fun getLocationString(): String {
 
@@ -46,7 +47,15 @@ class RequestMappingItem(val psiElement: PsiElement, private val urlPath: String
             })
         }
 
-        override fun getIcon(b: Boolean) = RequestMapperIcons.SEARCH
+        // Return icon based on HTTP method
+        override fun getIcon(b: Boolean) = when (this@RequestMappingItem.requestMethod) {
+            "GET" -> RequestMapperIcons.GET
+            "POST" -> RequestMapperIcons.POST
+            "PUT" -> RequestMapperIcons.PUT
+            "DELETE" -> RequestMapperIcons.DELETE
+            "PATCH" -> RequestMapperIcons.PATCH
+            else -> RequestMapperIcons.DEFAULT
+        }
 
         private fun getPresentModuleName(): String {
             val moduleName = getModuleName()
