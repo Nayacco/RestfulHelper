@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+- Add Jakarta EE (`jakarta.ws.rs`) namespace support for JAX-RS annotations
+- Automatically detect `javax.ws.rs` / `jakarta.ws.rs` namespace from annotation qualified name
+- Rename internal `jaxrs` package to `ws` to reflect support for both namespaces
+
 ## [0.4.7-stable]
 
 - Resolve [issue-51](https://github.com/Nayacco/RestfulHelper/issues/51)
